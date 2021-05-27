@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data =[
+            { id: "goldepond",title:"java"},
+            { id: "123213123",title:"jsp"},
+            { id: "kkkkkkkkkk",title:"jp"}
+        ]
+        console.log(data);
+
+        var result = JSON.stringify(data);
+        console.log(result);
+
+        var obj = JSON.parse(result);
+        console.log(obj);
+
+    var result2 = JSON.parse('[ {   "키":"goldepond"   }  ]');
+    console.log(result2);
+        //문자열을 제이슨형식으로 젼경할떄는 엄격한 규칙을 가지는데 
+        // key value을 " " 처리어야 합니다
+    </script>
+</body>
+</html>

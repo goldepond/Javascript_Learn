@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            function method1() {
+                console.log(1);
+            }
+            var a = method1;
+            a();
+
+
+            var b = function () {
+                console.log(2);
+            }
+            b();
+
+            var b = function (c, d) {
+                console.log(c + d);
+            }
+            b(3, 5);
+
+            var arro2 = (a, b) => a + b;
+            var arro3 = (x, y) => {
+                var z = x + y;
+                return z;
+            }
+            console.log(arro2(10, 20));
+            console.log(arro3(10, 20));
+
+            var arrow4 = (a) => {
+                if (a % 2 == 0) {
+                    alert("짝수");
+                }
+                else {
+                    alert("홀수");
+                }
+            }
+
+            // var check = () => alert("익명함수");
+
+            var arrow5 = (a, b, c) => {
+                var q = (a + b + c) / 2;
+                return q;
+            }
+            console.log(arrow4(3));
+            // console.log(check());
+            console.log(arrow5(3, 4, 5));
+
+
+            //자바스크립트의 모든 함수는 argument에 저장되어있음.
+
+
+            (function(a,b,c){
+
+                console.log(a,b,c);
+            })(1,2,3);
+
+            // (function(){
+                // var result = func1();
+                // func2(result);
+            // }
+
+            function method1 (){
+                var a ="gdgd";
+                return function(){
+                    return a;
+                }
+            }
+            var b = method1();
+            console.log(b);
+            console.log(b());
+
+            //================================
+
+            function test(){
+                var _name = "private";
+                return function(name){
+                    _name = name;
+                    return _name;
+                }
+            }
+        </script>
+    </body>
+
+</html>
