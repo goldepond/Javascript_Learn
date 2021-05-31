@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="lan">한국어</p>
+    <select name="job" onchange="language(this)" id="id">
+        <option value="영어">English</option>
+        <option value="한국어">한국어</option>
+        <option value="일본어">일본어</option>
+    </select>
+    <script>
+        var lan = document.getElementById("lan");
+
+        console.log(lan.innerHTML);
+        function language(k) {
+            switch (k.value) {
+                case "한국어":
+                    lan.innerHTML = "한국어"
+                    break;
+
+                case "영어":
+                    lan.innerHTML = "영어"
+                    break;
+
+                case "일본어":
+                    lan.innerHTML = "일본어"
+                    break;
+
+                case "중국어":
+                    lan.innerHTML = "중국어"
+                    break;
+
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

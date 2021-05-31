@@ -1,0 +1,38 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.left{float: left;}
+.right{float: right;}
+/* body{ background-color: black; color: white;} */
+/* =========================================== */
+
+.header, .contentBox {
+    text-align: center;
+    margin: 10px;
+}
+.header{
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+.header_title{
+    padding-top: 10px;
+    margin: 20px;
+    font-size: 46px;
+}
+.header_button button{
+    padding: 5px;
+    font-size: 20px;
+}
+/* ========================= */
+.contentBox{
+    
+    border: 1px solid black;
+    overflow: hidden;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 10px;
+
+}
+
+ .imageBox , .content_write{
+    overflow: hidden;
+    border: 1px solid black;
+}
