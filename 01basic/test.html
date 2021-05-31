@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" value="0" id="result" >
+    <h3>asdasdasdas</h3>
+    <button type="button" id="resultP">+</button>
+    <button type="button" id="resultM">-</button>
+
+    <input type="number" value="0" id="result" >
+    <h3>asdasdasdas</h3>
+    <button type="button" onclick="calc(this);">+</button>
+    <button type="button" onclick="calc(this);">-</button>
+    <script>
+        
+        var resultP = document.getElementById("resultP")
+        var resultM = document.getElementById("resultM")
+        var result = document.getElementById("result")
+
+        resultP.onclick = function(){
+            result.value++;
+            
+            console.log(result.value);
+        }
+        resultM.onclick = function(){
+            result.value--;
+            console.log(result.value);
+        }
+        
+        function calc(oper){
+            if(oper.innerHTML =='+')
+            {
+                result.value++;
+            }
+            else{
+                result.value--;
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="box">
+            <ul>
+                <li>안녕하새요</li>
+                <li>할루</li>
+                <li>니하오</li>
+            </ul>
+            
+            <button type="button" id="btn4">쉘뤸틁 확인</button>
+        </div>
+        <form>
+            <input type="checkbox" name="inter" value="1">1
+            <input type="checkbox" name="inter" value="2">2
+            <input type="checkbox" name="inter" value="3">3
+            <input type="checkbox" name="inter" value="4">4
+            <input type="checkbox" name="inter" value="5">5
+            <button type="button" id="btn1">쳌밬스요소확인</button>
+
+
+            <input type="radio" name="major" class="text" value="1">1
+            <input type="radio" name="major" class="text" value="2">2
+            <input type="radio" name="major" class="text" value="3">3
+            <input type="radio" name="major" class="text" value="4">4
+            <input type="radio" name="major" class="text" value="5">5
+            <button type="button" id="btn2">뤠디오 확인</button>
+
+
+            <br />
+
+            <select>
+                <option>여름</option>
+                <option>더운 여름</option>
+                <option>겨울</option>
+                <option>추운 겨울</option>
+            </select>
+            <button type="button" id="btn3">쉘뤸틁 확인</button>
+
+
+
+
+        </form>
+        <script>
+            //===================================================================
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function () {
+                var inter = document.getElementsByName("inter");
+                console.log(inter);
+                for (var i = 0; i < inter.length; i++) {
+                    console.log(inter[i].checked);
+                }
+            }
+            //===================================================================
+            var btn2 = document.getElementById("btn2");
+            btn2.onclick = function () {
+                var test = document.getElementsByClassName("test");
+                console.log(test);
+            }
+            //===================================================================
+            var btn3 = document.getElementById("btn3");
+            btn3.onclick function() {
+                var selecor = document.getElementById("selector");
+                var option = selecor.getElementsByTagName("option");
+
+                // var test3 = document.querySelectorAll("select > option");
+            }
+            //===================================================================
+            var btn4 = document.getElementById("btn3");
+            btn4.onclick function(){
+                var test3 = document.querySelectorAll(".box>ul>li");
+            }
+            //===================================================================
+            
+        </script>
+
+    </body>
+
+</html>
