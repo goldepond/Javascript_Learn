@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="addList">
+
+        </div>
+        <button type="button" id="add">10개 추가하기</button>
+
+        <script>
+            var ul = document.createElement("ul");
+            for (var i = 1; i <= 10; i++) {
+                var li = document.createElement("li");
+                var text = document.createTextNode("그만반복해");
+                li.appendChild(text);
+                ul.appendChild(li);
+                document.getElementById("addList").appendChild(ul);
+            }
+
+            //=====================================
+
+            var btn = document.getElementById("add");
+            btn.onclick = function () {
+                for (var i = 1; i <= 10; i++) {
+                    var li = document.createElement("li");
+                    var text = document.createTextNode("그만반복해");
+                    li.appendChild(text);
+                    document.querySelector("#addList>ul").appendChild(li);
+                }
+
+            }
+        </script>
+    </body>
+
+</html>

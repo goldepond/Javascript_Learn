@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+    </style>
+
+    <body>
+        <div>
+            <p>할일 목록 만들기</p>
+        </div>
+        <div>
+            <div id="textbox">
+                <input type="text" id="text">
+                <button type="button" id="textbun">확인</button>
+            </div>
+            <div class="box">
+                <input type="todo" id="todo">
+                <button type="todobtn" id="todobtn">확인</button>
+            </div>
+        </div>
+        <script>
+            var text = document.getElementById("text");
+            var textbox = document.getElementById("textbox");
+            var textbun = document.getElementById("textbun");
+
+            textbun.onclick = function () {
+                text.style.display = "none";
+                textbun.style.display = "none";
+                var text123 = document.createTextNode(text.value + " 님 안녕하세요");
+                textbox.appendChild(text123);
+            }
+
+            var todobtn = document.getElementById("todobtn");
+            var todo = document.getElementById("todo");
+            todobtn.onclick = function(){
+                var ul = document.createElement("ul");
+                var li = document.createElement("li");
+                var p = document.createElement("p");
+                p.innerHTML = todo.value;
+
+                li.appendChild(p);
+                ul.appendChild(li);
+                console.log(ul);
+                document.querySelector(".box").appendChild(ul);
+                
+            }
+
+
+        </script>
+    </body>
+
+</html>
