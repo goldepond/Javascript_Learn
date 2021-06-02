@@ -8,8 +8,8 @@
         <title>Document</title>
     </head>
     <style>
-        *{
-        }
+        * {}
+
     </style>
 
     <body>
@@ -21,12 +21,17 @@
                 <input type="text" id="text">
                 <button type="button" id="textbun">확인</button>
             </div>
-            <div class="box">
+            <div >
                 <input type="todo" id="todo">
                 <button type="todobtn" id="todobtn">확인</button>
+                <div id="box" class="tableList box">
+
+                </div>
             </div>
         </div>
         <script>
+            var boc = document.getElementById("box");
+
             var text = document.getElementById("text");
             var textbox = document.getElementById("textbox");
             var textbun = document.getElementById("textbun");
@@ -39,23 +44,56 @@
             }
 
             var todobtn = document.getElementById("todobtn");
+
             var todo = document.getElementById("todo");
-            todobtn.onclick = function(){
+            todobtn.onclick = function () {
+
                 var ul = document.createElement("ul");
                 var li = document.createElement("li");
-                // var p = document.createElement("p");
-                li.innerHTML = todo.value;
-                var button =document.createElement("button");
-                button.innerHTML ="삭제"
+                var button = document.createElement("button");
+                // var buttonUp = document.createElement("button");
+                button.innerHTML = "삭제"
+                li.innerHTML = todo.value +'<button onclick="up(this)">위</button>'+'<button onclick="down(this)">아래</button>';
                 // p.innerHTML = todo.value+'<button type="delete" id="delete">삭제</button>';
                 li.appendChild(button);
                 ul.appendChild(li);
-                console.log(ul);
-                button.addEventListener("click",deleteTodo);
+                boc.appendChild(ul);
+
+                todo.value = "";
+
+                button.addEventListener("click", deleteTodo);
                 document.querySelector(".box").appendChild(ul);
             }
-            function deleteTodo(){
-                
+
+            function up(node) {
+                var tableList = document.querySelector(".tableList");
+                var current = node.parentElement.parentElement;
+                console.log(current);
+                var next = current.previousElementSibling;
+
+                if (next == null) {
+                    return;
+                }
+                tableList.insertBefore(current, next);
+            }
+
+            function down(node){
+                console.log(event.target)
+            var tableList = document.querySelector(".tableList");
+            var current = node.parentElement.parentElement;
+            var next = current.nextElementSibling;
+            if(next ==null)
+            {
+                return;
+            }
+            if(confirm("ㄱㄱ?"))
+            {
+                tableList.insertBefore(next,current);
+            }
+        }
+            function deleteTodo() {
+                console.log(event.target.parentElement);
+                event.target.parentElement.remove();
             }
 
         </script>
