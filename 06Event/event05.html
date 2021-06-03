@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                border-spacing: 0px;
+            }
+
+            tr,
+            td,
+            th {
+                border: 1px solid black;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>번호 </td>
+                    <td>제목</td>
+                    <td>내용</td>
+                    <td>삭제</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>첫글</td>
+                    <td>hellowword</td>
+                    <td><button type="button">삭제</button></td>
+                </tr>
+
+
+                <tr>
+                    <td>2</td>
+                    <td>첫글</td>
+                    <td>hellowword</td>
+                    <td><button type="button">삭제</button></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>첫ㄴㅁㅇㅁㅈㅇ글</td>
+                    <td>hellowword</td>
+                    <td><button type="button">삭제</button></td>
+                </tr>
+
+
+                <tr>
+                    <td>4</td>
+                    <td>첫ㅁㅇㅁㄴㅇㅁㄴ글</td>
+                    <td>hellowword</td>
+                    <td><button type="button">삭제</button></td>
+                </tr>
+
+
+                <tr>
+                    <td>5</td>
+                    <td>첫ㄴㅁㅇㅁㄴㅇ글</td>
+                    <td>hellowword</td>
+                    <td><button type="button">삭제</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+        <script>
+            // var button = document.querySelectorAll("tbody tr td button");
+            // for (var a = 0; a < button.length; a++) {
+            //     button[a].onclick = function () {
+            //         console.log(event.target);
+            //         event.target.parentElement.parentElement.remove();
+            //     }
+            // }
+            var button = document.querySelector("tbody");
+            button.onclick = function () {
+                    if(event.target.tagName != "BUTTON") return;
+                    event.target.parentElement.parentElement.remove();
+                }
+        </script>
+    </body>
+
+</html>

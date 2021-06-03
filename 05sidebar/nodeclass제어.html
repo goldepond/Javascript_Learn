@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn" class="btn111 notbringthis">흠</button>
+
+    <script>
+        // var btn = document.getElementById("btn");
+        // console.log(btn.type);
+        // console.log(btn.id);
+        // console.log(btn.className);
+        // console.log(btn.classList[0]);
+        // btn.classList.add("★★★★★★★★addthisone★★★★★★★★★");
+        // console.log(btn.classList);
+        // btn.classList.remove("btn111");
+        // console.log(btn.classList);
+
+    </script>
+
+<!-- //=================================== -->
+<style>
+    .toggle{
+        background-color: burlywood;
+    }
+    .change{
+        background-color: skyblue;
+    }
+</style>
+    <hr/>
+    <h3>클래스를 이용해서 하나의 버튼을 2개의 기능으로 </h3>
+    <button type="button" class="toggle" id="toggle">토글번튼</button>
+    <script>
+        var toggle =document.getElementById("toggle");
+        toggle.onclick = function(){
+            console.log(toggle.className);
+            if(toggle.className == "toggle")
+            {
+                toggle.className = "change";
+                toggle.innerHTML ="체인지";
+            }
+            else{
+                toggle.className = "toggle"
+                toggle.innerHTML ="토글번튼";
+            }
+        }
+        
+    </script>
+
+    <hr/>
+    <button type="button" class="toggle2" id="toggle2">토글번튼</button>
+    <script>
+        var toggle2 = document.getElementById("toggle2");
+        toggle2 .onclick = function(){
+            toggle2.classList.toggle("change");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .imageBox img{
+            height: 300px;
+            width:  300px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <tbody>
+        <div class="imageBox">
+            <img src="../image/1.jpg">   
+            <img src="../image/2.jpg">   
+            <img src="../image/3.jpg">   
+            <img src="../image/4.jpg">   
+        </div>
+        <div class="copyBox">
+            <img src="../image/4.jpg">
+        </div>
+    </tbody>
+
+<script>
+    var img = document.querySelectorAll(".imageBox img");
+    var copyBox = document.querySelector(".copyBox img");
+    for(var i =0; i<img.length;i++)
+        {
+            img[i].onclick = function(){
+        
+                console.log(copyBox.src);
+
+                copyBox.src = event.target.src;
+                // result.innerHTML = event.target.innerHTML;
+            }
+        }
+</script>
+</body>
+</html>

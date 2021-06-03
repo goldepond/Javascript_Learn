@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li>1. 홍길동</li>
+        <li>2. 홍길동</li>
+        <li>3. 홍길동</li>
+        <li>4. 홍길동</li>
+        <li>5. 홍길동</li>
+    </ul>
+
+    <p class="result"></p>
+    <!-- 인라인방식으로 이벤트 5개쓰는거나 , 인라인방식으로 li개 가져가서 쓰는거나.. -->
+
+    <script>
+        var list = document.querySelectorAll(".list");
+        var result = document.querySelector(".result");
+        for(var i =0; i<list.length;i++)
+        {
+            list[i].onclick = function(){
+                console.log(event.target);
+                if(event.target.tagName != "LI")return;
+                result.innerHTML = event.target.innerHTML;
+            }
+        }
+    </script>
+</body>
+</html>
