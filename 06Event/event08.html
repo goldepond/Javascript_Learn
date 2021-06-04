@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .toggle-mwnu {
+                display: none;
+            }
+
+            .active {
+                display: block;
+                animation: animaname 0.5s ease-in-out;
+            }
+            .toggleList{text-align: center;}
+            .toggleList li {
+                list-style: none;
+                display: inline-block;
+                border: 1px solid black;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                border-spacing: 0;
+            }
+
+            @keyframes animaname {
+                from {
+                    opacity: 0;
+                    margin-left:  -50%;
+                }
+                to {
+                    opacity: 1;
+                    margin-left: 0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <ul class="toggleList">
+                <li data-id="#toggle1">메뉴1</li>
+                <li data-id="#toggle2">메뉴2</li>
+                <li data-id="#toggle3">메뉴3</li>
+            </ul>
+        </div>
+        <div>
+            <div class="toggle-mwnu active" id="toggle1">21321321312321</div>
+            <div class="toggle-mwnu" id="toggle2">33333333333333</div>
+            <div class="toggle-mwnu" id="toggle3">4444444444444444444</div>
+        </div>
+
+        <script>
+            var body = document.querySelector(".toggleList");
+            var toggle_mwnu = document.querySelectorAll(".toggle-mwnu");
+
+
+
+            body.onclick = function () {
+                event.preventDefault();
+                if (event.target.tagName != "LI") return;
+                // for (var a = 0; a < toggle_mwnu.length; a++) {
+                //     if (toggle_mwnu[a].classList.contains("active")){
+                //         toggle_mwnu[a].classList.remove("active");
+                //     }
+
+                //     if (toggle_mwnu[a].id == event.target.dataset.id) {
+                //         toggle_mwnu[a].classList.add("active");
+                //         console.log(toggle_mwnu[a].classList);
+                //     }
+            }
+
+            body.onclick = function () {
+                var toggle_mwnuAC = document.querySelector(".active");
+
+                event.preventDefault();
+                if (event.target.tagName != "LI") return;
+
+                if (toggle_mwnuAC.classList.contains("active")) { toggle_mwnuAC.classList.remove("active"); }
+                document.querySelector(event.target.dataset.id).classList.add("active");
+
+            }
+
+        </script>
+    </body>
+
+</html>

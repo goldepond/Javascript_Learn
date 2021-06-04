@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nameList">
+        <li><a href="##" data-info='{"id": "kkk", "name" :"홍길동"}'>홍길동</a></li>
+        <li><a href="##" data-info="{"+"id:'kkk'," + "name :'이길동'" +"}">이길동</a></li>
+        <li><a href="##" data-info="3">삼길동</a></li>
+        <li><a href="##" data-info="4">사길동</a></li>
+    </ul>
+    <script>
+        var nameList = document.querySelector(".nameList");
+        
+        nameList.onclick = function(){
+            event.preventDefault();
+            if(event.target.tagName != "A") return;
+
+            console.log(event.target.href);
+            console.log(event.target.dataset.info);
+            //data-xx로 저장한 속성은 dataset의xx값으로 저장
+             var data = JSON.parse(event.target.dataset.info);
+             //json 문자열은 무조건 ""로 묶여있어야됨.
+             console.log(data);
+        }
+    </script>
+</body>
+</html>
