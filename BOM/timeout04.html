@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="stopTime">스탑</button>
+    <script>
+        var stop = setTimeout(function(){
+            alert("hellow Word")
+        }, 3000);
+
+        var stoptime = document.querySelector(".stopTime");
+        stoptime.onclick = function(){
+            clearTimeout();
+        }
+
+        // setTimeout(function(){}, 3000);
+        setTimeout(test(text), 3000);
+
+        function test(test){
+
+            console.log(text);
+            return a;
+        }
+        setTimeout(test("hellow WOrd"), 3000);
+
+        function test(text)
+        {
+            return 
+        }
+
+        (function(text){
+            setTimeout(function(){ alert(text);},3000)
+        })("hellow WOrd")
+    </script>
+</body>
+</html>

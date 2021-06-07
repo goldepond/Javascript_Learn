@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .Timer {
+                padding: 50px;
+                z-index: 100;
+            }
+
+            @keyframes fadeout {
+                from {
+                    opacity: 0;
+
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body data-img='{"1":"../image/1.jpg" , "2":"../image/2.jpg" , "3":"../image/3.jpg" , "4":"../image/4.jpg"}'>
+        <!-- <img src="../image/1.jpg" class="bgimg">    -->
+        <div class="Timer">
+            <h2>타이머</h2>
+
+            <select name="Timecount">
+            </select>
+            <select  name="Timecount">
+            </select>
+            <select  name="Timecount">
+            </select>
+            <button type="button" class="timeset">시간설정</button>
+            <button type="button">일시정지</button>
+            <h2>00:00:00</h2>
+        </div>
+
+        <script>
+
+            var timerButton = document.querySelector(".timeset");
+            var timer = document.querySelector(".Timer");
+            //============================================
+            var H_time = document.getElementsByName("Timecount")[0];
+            var M_time = document.getElementsByName("Timecount")[1];
+            var S_time = document.getElementsByName("Timecount")[2];
+            //============================================
+            for (var i = 1; i < 100; i++) {
+                var option = document.createElement("option");
+                option.value = i
+                var optinnum = document.createTextNode(i);
+                option.appendChild(optinnum);
+                H_time.appendChild(option);
+             }
+             // 시간범위 설정
+             for (var i = 1; i < 60; i++) {
+                var option = document.createElement("option");
+                option.value = i
+                var optinnum = document.createTextNode(i);
+                option.appendChild(optinnum);
+                M_time.appendChild(option);
+                // S_time.appendChild(option);
+             }
+             // 시간범위 설정
+             for (var i = 1; i < 60; i++) {
+                var option = document.createElement("option");
+                option.value = i
+                var optinnum = document.createTextNode(i);
+                option.appendChild(optinnum);
+                S_time.appendChild(option);
+            }
+            // 시간범위 설정
+            var isStop = false;
+            //============================================
+             H_time.onchange = function(){
+                 isStop =true
+                 console.log(H_time.value);
+                 var timedate = timer.lastElementChild.innerHTML.split(':');
+                var date = new Date(1, 1, 1, timedate[0], timedate[1], timedate[2]);
+                var hour = H_time.value; var minite = date.getMinutes(); var second = date.getSeconds();
+                timer.lastElementChild.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minite < 10 ? "0" + minite : minite) + ":" + (second < 10 ? "0" + second : second);
+             }
+             M_time.onchange = function(){
+                isStop =true
+                 console.log(H_time.value);
+                 var timedate = timer.lastElementChild.innerHTML.split(':');
+                var date = new Date(1, 1, 1, timedate[0], timedate[1], timedate[2]);
+                var hour = date.getHours(); var minite = M_time.value; var second = date.getSeconds();
+                timer.lastElementChild.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minite < 10 ? "0" + minite : minite) + ":" + (second < 10 ? "0" + second : second);
+            }
+             S_time.onchange = function(){
+                isStop =true
+                 console.log(H_time.value);
+                 var timedate = timer.lastElementChild.innerHTML.split(':');
+                var date = new Date(1, 1, 1, timedate[0], timedate[1], timedate[2]);
+                var hour = H_time.value; var minite = date.getMinutes(); var second =S_time.value;
+                timer.lastElementChild.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minite < 10 ? "0" + minite : minite) + ":" + (second < 10 ? "0" + second : second);
+            }
+            //============================================ 
+
+            timerChange = function () {
+                var timedate = timer.lastElementChild.innerHTML.split(':');
+                var date = new Date(1, 1, 1, timedate[0], timedate[1], timedate[2]);
+                date.setSeconds(date.getSeconds() - 1);
+                var hour = date.getHours(); var minite = date.getMinutes(); var second = date.getSeconds();
+                timer.lastElementChild.innerHTML = (hour < 10 ? "0" + hour : hour) + ":" + (minite < 10 ? "0" + minite : minite) + ":" + (second < 10 ? "0" + second : second);
+            };
+            timerButton.onclick = function () {
+                
+                if(!isStop)
+                {
+                    var a=setInterval(timerChange, 1000);
+                }
+                else{
+                    clearInterval(a);
+                }
+                
+            }
+
+            function timego(){
+
+            }
+
+        </script>
+    </body>
+
+</html>

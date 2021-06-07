@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <button type="button" class="popup">새창</button>
+        <button type="button" class="stopInterval">인터벌 멈춰</button>
+        <script>
+            var popup = document.querySelector(".popup");
+            popup.onclick = function () {
+                // window.alert();
+                alert("123");
+
+                // window.confirm();
+                confirm("123123");
+
+                // window.setInterval(alert(1),1);
+                // setInterval(aa,1000);
+
+                // function aa( ){
+                //     alert("1231");
+                // }
+                var a = setInterval(function () {
+                    console.log("1231");
+                }, 1000);
+
+                var stopInterval = document.querySelector(".stopInterval");
+
+                stopInterval.onclick = function(){
+                    clearInterval(a);
+                }
+            }
+        </script>
+    </body>
+
+</html>

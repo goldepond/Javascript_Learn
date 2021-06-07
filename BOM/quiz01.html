@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .main_banner {
+                background: linear-gradient(90deg, #0c151c 1.3125rem, transparent 1%) 50%, linear-gradient(#0c151c 1.3125rem, transparent 1%) 50%, #263747;
+                background-size: 1.5rem 1.5rem;
+                padding: 6rem 0;
+                color: #fff;
+                text-align: center;
+
+            }
+            img{
+                display: none;
+                position: relative;
+                left: 0px;
+
+
+            }
+            .bgimg{
+                display: inline-block;
+                animation: fadeIn 0.5s linear;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    /* transform: translateY(-100%); */
+                    top: -500px;
+                }
+
+                to {
+                    opacity: 1;
+                    /* transform: translateY(0); */
+                    top: 0px;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="main_banner">
+            <img src="../image/1.jpg" width="300">
+            <img src="../image/2.jpg" width="300">
+            <img src="../image/3.jpg" width="300">
+            <img src="../image/4.jpg" width="300">
+        </div> 
+    <script>
+        var num=0;
+        (function(){
+            var main_banner = document.querySelector(".main_banner");
+            var stop = setInterval(function(){
+                var img = main_banner.children[num];
+                
+                img.classList.add("bgimg");
+                
+                if(num==main_banner.children.length)
+                {
+                    clearInterval(stop);
+                }
+                else{
+                    num++;
+                }
+            },500);
+        })();
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="popup">새창</button>
+    <script>
+        var popup= document.querySelector(".popup");
+        popup.onclick = function(){
+            window.open("https://www.naver.com");
+            window.open("https://www.naver.com","별칭","width=300, height=600, left=100,top=100");
+            window.close();
+        }
+    </script>
+</body>
+</html>
