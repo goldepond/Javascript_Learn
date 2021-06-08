@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <button type="button" onclick="ajax();">에이잭스 요청</button>
+        <script>
+            // 호출을 하면 호출구문이 오래거릴 수 있기에 프로미스는 내장객체를 반환
+
+            // 프로미스는feth를 사용했을떄 상태결과를 반환해주는 약속된 객체
+            // 수행 Pending  수행중 // fullfiled 성공 // reject 거절
+            function ajax() {
+                //========================================
+
+                // fetch("hi.txt").then(function(responce){
+                //     responce.text().then(function(a){
+                //         console.log(a);
+                //     })
+                // });
+
+                //========================================
+                // var promise = fetch("hi.txt");
+                // console.log(promise);
+
+                //========================================
+                // var promise = fetch("hi.txt");
+                // promise.then(function(){});
+                // //=>
+                // var promise = fetch("hi.txt").then(function() {});
+                // //then은 콜백함수를 담아서 결과를 반환받음.
+                // // 왜 와이. 언제 반환받을지 모르니까. 
+
+                //========================================
+                // var promise = fetch("hi.txt").then(function(responce) {
+                //     console.log(responce);
+                //     //response 성공/실패/url주소/데이터 애대한 많은 정보 확인 가능
+                // });
+
+                //========================================
+
+                // var promise = fetch("hi.txt").then(function (responce) {
+                //     // console.log(responce.text() );
+                //     responce.text.theb(function (text) {
+                //         console.log(text);
+                //     });
+                // });
+                //========================================
+                fetch("h1.txt").then(func1);
+                function func1(responce){
+                    console.log(1);
+                }
+
+                console.log(2);
+            }
+        </script>
+    </body>
+
+</html>

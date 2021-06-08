@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h2>메인페이지.</h2>
+        <script>
+            // ==========================================
+            var value = navigator.appCodeName;
+            var cookies = document.cookie.split(";");
+
+            for (var i in cookies) {
+                console.log(cookies[i]);
+                console.log(cookies[i].indexOf(value));
+                if (cookies[i].indexOf(value) != -1) {
+                    
+                }
+                else {
+                    window.open("popup.html", "popup", "width=600, height=600, left=100,top=100");
+                }
+            }
+            // ==========================================
+        </script>
+    </body>
+
+</html>

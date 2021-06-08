@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h2>
+            우왕 팦엎 TLqkf
+            <br />
+            <input type="button" id="cookieGet" value="하루동안 열지 않기"><br />
+        </h2>
+
+        <script>
+
+            var date = new Date();
+            date.setDate(date.getDate() + 1);
+            var value12 = document.getElementById("cookieGet");
+            
+            var name = navigator.appName;
+            var value = navigator.appCodeName;
+            var cookie = "";
+
+            cookie += name + "=" + value + ";";
+            cookie += "expires=" + date;
+            console.log(cookie + "sadf");
+            value12.onclick = function () 
+            {;
+                document.cookie = cookie;
+
+                window.close();
+            }
+        </script>
+    </body>
+
+</html>

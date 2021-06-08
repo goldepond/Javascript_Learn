@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- navigator+ -->
+    <script>
+        // navigator.appName 브라우저 이름
+        // navigator.appVersion 브라우저 정보
+        // navigator.userAgent 브라우저 접속환경 
+        // navigator.geolocation //브라우저 접속환경 
+        // console.log(navigator.geolocation.getCurrentPosition(성공시 돌려받을 콜백 , 실패시 돌려받을 콜백));
+        navigator.geolocation.getCurrentPosition(function(position)
+        {
+            // console.log("성공");
+            alert("성공");
+            console.log(position.timestamp);//접근시
+            console.log(position.coords.latitude);//위도
+            console.log(position.coords.longitude);//경도
+
+        },function(error){
+            // console.log("실패");
+            alert("실패");
+        });
+
+
+        (function(){
+            navigator.geolocation.getCurrentPosition(success,fail)
+        })();
+        function success(){
+
+        }
+        function fail(){
+            
+        }
+
+
+        // var bow = navigator.userAgent.toLowerCase();// 브라우저 판별
+
+        // if(bow.indexOf("android")){
+        //     // indexof 안에 값이 있는지 없는지 판별
+        //     console.log("안드로이드있음");
+        // }
+    </script>
+</body>
+</html>
