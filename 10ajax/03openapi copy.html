@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- 6f79457358676f6c3633787a587772 -->
+        <h2>서울시 공공 와이파이 위치 정보 XML로 </h2>
+
+        <!-- http://openapi.seoul.go.kr:8088/(6f79457358676f6c3633787a587772)/json/TbPublicWifiInfo/1/5/ -->
+        <button type="button" onclick="ajax();">가져오기</button>
+        <script>
+            fetch("http://openapi.seoul.go.kr:8088/6f79457358676f6c3633787a587772/xml/TbPublicWifiInfo/1/50/",
+            ).then(function (response) {
+                if (response.status != 200) {
+                    alert("넽트워크 오류");
+                }else {
+                    return response.text();
+                }
+            }).then(function (text) {
+                // console.log(text);
+                // text문서를  xml문서로 변경
+                // DOMPARSER()객체를 이용
+                // var dom = new DOMParser();
+                // dom = parseFromString(text,"text/xml");
+                 return new DOMParser().parseFromString(text,"text/xml");//파싱할 문자열, 파싱할 형태
+            }).then(function(data){
+                var list = data.querySelectorAll("row");
+                console.log(list);
+                for(var a=0; a<list.length; a++)
+                {
+                    // console.log(list[a])
+                    var adr = list[a].querySelector("X_SWIFI_ADRES1").innerHTML;
+                    console.log(adr);
+                }
+            });
+        </script>
+    </body>
+
+</html>

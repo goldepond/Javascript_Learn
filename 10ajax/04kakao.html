@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="kakao.js"></script>
+        <!-- 카카오 sdk로드 -->
+    </head>
+
+    <body>
+        <a id="custom-login-btn" href="javascript:loginWithKakao()">
+            <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
+        </a>
+        <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
+
+        <script>
+            Kakao.init('3c9c2c80f44b7412a52bfb0036f525c9');//카카오 초기화
+            Kakao.isInitialized();
+
+
+            //3 카카오 로그인 코드 무지성 복붙
+            function loginWithKakao() {
+                Kakao.Auth.login({
+                    success: function (authObj) {
+                        alert(JSON.stringify(authObj))
+                        Kakao.Auth.setAccessToken(authObj.access_token);
+                        getinfo();
+                    },
+                    fail: function (err) {
+                        alert(JSON.stringify(err + "1 "))
+                    },
+                })
+            }
+
+
+
+            //4. 어세스토큰발급받고 함수호출로 사용자 정보 받아옴
+            function getinfo() {
+                Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: function (res) {
+                        // alert(JSON.stringify(res))
+                        console.log(res.properties.nickname);
+                        console.log(res.properties.profile_image);
+                        console.log(res.kakao_account.email);
+                        console.log(res.kakao_account.gender);
+                    },
+                    fail: function (error) {
+                        alert(
+                            'login success, but failed to request user information: ' +
+                            JSON.stringify(error + " 2")
+                            // 로그인 실패!
+                        )
+                    },
+                })
+            }
+
+
+// 카카오 서버에서 어세스토큰을 만료, 사용자 어플리케션의 로그아웃은 따로 진행
+            function kakaoLogout() {
+                if (!Kakao.Auth.getAccessToken()) {
+                    alert('Not logged in.')
+                    return
+                }
+                Kakao.Auth.logout(function () {
+                    alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+                })
+            }
+        </script>
+
+
+    </body>
+
+</html>

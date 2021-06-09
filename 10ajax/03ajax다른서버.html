@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            ul, li {
+                padding: 0;
+                margin: 0;
+            }
+            .list {
+                width: 80%;
+                margin: 0 auto;
+                overflow: hidden;
+                padding: 10px;
+            }
+
+            .list .movie {
+                height: 600px;
+                width: 25.000%;
+                float: left;
+                box-sizing: border-box;
+                position: relative;
+
+            }
+
+            .list .movie img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+            }
+
+            .list .movie .inner {
+                padding-left: 105px;
+            }
+            .list .movie .summary{
+                height: 300px;
+                overflow: scroll;
+            }
+
+            .list .movie .genres li {
+                list-style: none;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>인기영화 리스트</h1>
+        <!-- https://jsonplaceholder.typicode.com/todos/1 연습용1 -->
+        <!-- https://yts-proxy.now.sh/list_movies.json 연습용2-->
+        <div class="list">
+            <!-- ================================================= -->
+            <!-- <div class="movie">
+                <img src="###">
+                <div class="inner">
+                    <h3 class="title">제목</h3>
+                    <h3 class="year">발행일</h3>
+                    <ul class="genres">
+                        <li>장르</li>
+                    </ul>
+                    <h3 class="summary">내용</h3>
+                </div>
+            </div> -->
+            <!-- ================================================= -->
+
+        </div>
+
+        <button type="button" onclick="ajax();">영화 보기</button>
+        <script>
+            var list = document.querySelector(".list");
+
+
+            function ajax() {
+                fetch("https://yts.mx/api/v2/list_movies.json?sort_by=rating")
+                    .then(function (response) {
+                        if (response.status != 200) {
+                            alert("넽트워크 오류");
+                        }
+                        else {
+                            return response.json();
+                        }
+                    }).then(function (json) {
+                        var data = json.data.movies;
+                        console.log(data[0].genres);
+                        var tag = "";
+                        for (var a = 0; a < data.length; a++) {
+                            var title = data[a].title;
+                            var year = data[a].year;
+                            var genres = data[a].genres;
+                            var summary = data[a].summary;
+                            var img = data[a].medium_cover_image;
+
+                            // console.log(year);
+                            tag += '<div class="movie">';
+                            tag += '<img src="' + img + '">';
+                            tag += '<div class="inner">';
+                            tag += '<h3 class="title">' + title + '</h3>';
+                            tag += '<h3 class="year">' + year + '</h3>';
+                            tag += '<ul class="genres">';
+                            for (var k in genres) {
+                                tag += '<li>'+ genres[k] + ' / '+ '</li>';
+                            }
+                            tag += '</ul>';
+                            tag += '<h3 class="summary">' + summary + '</h3>';
+                            tag += '</div>';
+                            tag += '</div>';
+                            list.innerHTML = tag;
+
+                        }
+
+                    });
+
+            }
+
+            (function () {
+                ajax();
+            })();
+        </script>
+    </body>
+
+</html>

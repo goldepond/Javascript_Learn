@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <button type="button" onclick="ajax();">에이잭스 요청</button>
+        <script>
+            function ajax() {
+                // //============================================
+                // fetch("hi.json").then(function(responce){
+                //     console.log(responce);
+                //     responce.json().then(function(json){
+                //         console.log(json);
+                //         console.log(json.userPw);
+                //     });
+                // });
+                // // fetch("hi.json").then(function(responce))
+                //  //============================================
+                fetch("hi.json").then(function (response) {
+                    return response.json();
+                }).then(function (json) {
+                    console.log(json);
+                    console.log(json.userPw);
+                });
+                // //============================================
+                fetch("hi.json").then((a) => a.json())
+                                .then((a) => console.log(a.userPw) );
+                //============================================
+
+                                
+
+            }
+        </script>
+    </body>
+
+</html>
