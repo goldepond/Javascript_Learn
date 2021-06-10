@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="kakao.js"></script>
+        <!-- 카카오 sdk로드 -->
+    </head>
+
+    <body>
+
+        추가할 위도 : <input type="text" id="lan" value="37.4449168"><br />
+        추가할 경도 : <input type="text" id="lat" value=" 127.1388684"><br />
+        <button type="button" onclick="gogo();">보내기</button>
+
+        <div id="map" style="width:1000px;height:1000px;"></div>
+        <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3c9c2c80f44b7412a52bfb0036f525c9"></script>
+        <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new kakao.maps.LatLng(37.498095,127.027610),
+                    level: 3 // 지도의 확대 레벨
+                };
+
+            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+            //=============================================================
+
+
+            var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발 마커이미지의 주소입니다    
+                startSize = new kakao.maps.Size(50, 45), // 출발 마커이미지의 크기입니다 
+                startOption = {
+                    offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+                };
+
+            var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착 마커이미지 주소입니다    
+                arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다 
+                arriveOption = {
+                    offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+                };
+
+            var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발 마커이미지의 주소입니다    
+                startSize = new kakao.maps.Size(50, 45), // 출발 마커이미지의 크기입니다 
+                startOption = {
+                    offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+                };
+
+            // 출발 마커 이미지를 생성합니다
+            var startImage = new kakao.maps.MarkerImage(startSrc, startSize, startOption);
+            //=============================================================
+            // 출발 마커가 표시될 위치입니다 
+            var startPosition = new kakao.maps.LatLng(37.498095,127.027610);
+
+            // 출발 마커를 생성합니다
+            var startMarker = new kakao.maps.Marker({
+                map: map, // 출발 마커가 지도 위에 표시되도록 설정합니다
+                position: startPosition,
+                image: startImage // 출발 마커이미지를 설정합니다
+            });
+
+
+            //=============================================================
+
+            var arriveImage = new kakao.maps.MarkerImage(arriveSrc, arriveSize, arriveOption);
+            // 도착 마커가 표시될 위치입니다 
+            var arrivePosition = new kakao.maps.LatLng(33.450701, 127.1388684);
+
+            // 도착 마커를 생성합니다 
+            var arriveMarker = new kakao.maps.Marker({
+                map: map, // 도착 마커가 지도 위에 표시되도록 설정합니다
+                position: arrivePosition,
+                image: arriveImage // 도착 마커이미지를 설정합니다
+            });
+
+            var drawingFlag = false; // 선이 그려지고 있는 상태를 가지고 있을 변수입니다
+            var clickLine // 마우스로 클릭한 좌표로 그려질 선 객체입니다
+            var distanceOverlay; // 선의 거리정보를 표시할 커스텀오버레이 입니다
+
+            //=======================================
+
+
+
+            //=======================================
+            var linePath = [
+                new kakao.maps.LatLng(37.498095,127.027610),
+                new kakao.maps.LatLng(33.450701, 127.1388684),
+                // new kakao.maps.LatLng(37.4449168, 127.1388684),
+            ];
+            function gogo() {
+                var lan = document.getElementById("lan");
+                var lat = document.getElementById("lat");
+                var arrd = [lan.value, lat.value];
+                linePath.push(new kakao.maps.LatLng(arrd[0],arrd[1]));
+                
+                console.log(linePath);
+                var polyline = new kakao.maps.Polyline({
+                path: linePath, // 선을 구성하는 좌표배열 입니다
+                strokeWeight: 5, // 선의 두께 입니다
+                strokeColor: 'BLACK', // 선의 색깔입니다
+                strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                strokeStyle: 'solid' // 선의 스타일입니다
+            });
+                polyline.setMap(map);
+            }
+
+            // polyline.setMap(map);
+
+        </script>
+    </body>
+
+</html>

@@ -15,7 +15,27 @@
         <!-- http://openapi.seoul.go.kr:8088/(6f79457358676f6c3633787a587772)/json/TbPublicWifiInfo/1/5/ -->
         <button type="button" onclick="ajax();">가져오기</button>
         <script>
-            fetch("http://openapi.seoul.go.kr:8088/6f79457358676f6c3633787a587772/xml/TbPublicWifiInfo/1/50/",
+            fetch("                const myLatLng = { lat: MyPosition.lat, lng: MyPosition.lng};
+
+const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: myLatLng,
+});
+new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+});                const myLatLng = { lat: MyPosition.lat, lng: MyPosition.lng};
+
+const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: myLatLng,
+});
+new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+});",
             ).then(function (response) {
                 if (response.status != 200) {
                     alert("넽트워크 오류");
