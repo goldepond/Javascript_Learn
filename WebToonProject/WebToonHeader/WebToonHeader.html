@@ -29,49 +29,175 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             </head>
             <style>
+                /* ======================= */
+                .float_left {
+                    float: left;
+                }
+
+                .float_right {
+                    float: right;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                }
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                ul li {
+                    list-style: none;
+                }
+
+                /* ======================= */
+
                 #daumWrap {
-                    min-width: 978px;
                     min-height: 800px;
+                    text-align: center;
                 }
-                .glyphicon{
-                    color: white;
-                }
-                #daumWrap #wrapMinidaum {
-                    width: 100%;
+
+                #wrapMinidaum {
                     height: 40px;
                     background: #262424;
-                    text-align: center;
                 }
 
                 #daumWrap #minidaum {
-                    color: white;
-                    display: inline-block;
-                    width: 50%;
-                    height: 40px;
-                    line-height: 40px;
-                    text-align: center;
-                    
-                }
-
-                #daumWrap #minidaum .minidaum_logo{
+                    float: none;
+                    margin: 0 auto;
                     overflow: hidden;
-                    
                 }
 
-                #daumWrap #minidaum .minidaum_logo .glyphicon-thumbs-up{
-                    padding-left: 10px;
-                     float: left;
-                    color: red;
+                .minidaum_logo {
                     height: 40px;
                     line-height: 40px;
                 }
 
-                #daumWrap #minidaum  .minidaum_gnb a,  #daumWrap #minidaum  .minidaum_gnb .glyphicon{
-                    color: red;
+                .minidaumService {
+                    height: 40px;
+                    line-height: 40px;
+
+                }
+
+                #daumWrap #minidaum .minidaum_gnb #minidaumService a {
+                    border-color: #383a3f;
+                    background-color: #383a3f;
+                    margin: 8px;
+                    width: 50px;
+                    height: 24px;
+                    color: #E4E4E4;
+                    font-size: 12px;
+                    line-height: 24px;
+                    text-align: center;
+                    display: block;
                     float: right;
-                    padding-left: 50px;
-                    height: 40px;
-                    line-height: 40px;
+                }
+
+                #daumWrap #minidaum .minidaum_gnb a img {
+                    margin: 8px;
+                    height: 24px;
+                    color: #E4E4E4;
+                    font-size: 12px;
+                    line-height: 24px;
+                    text-align: center;
+                    display: block;
+                    float: right;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+
+                /* ======================= */
+                .inner_head {
+                    float: none;
+                    margin: 0 auto
+                }
+
+                .inner_head .webtoon a {
+                    overflow: hidden;
+                }
+
+                /* ======================= */
+                .webtoon {
+                    padding-right: 150px;
+                }
+
+                #daumGnb {
+                    float: left;
+                    width: 311px;
+                    height: 90px;
+                }
+
+                .gnb_webtoon {
+                    overflow: hidden;
+                    height: 90px;
+                }
+
+                .gnb_webtoon li {
+                    float: left;
+                    height: 90px;
+                }
+
+                .gnb_webtoon .gnb_ranking {
+                    width: 90px;
+                }
+
+                .gnb_webtoon .gnb_league {
+                    width: 129px;
+                }
+                .gnb_webtoon .gnb_my {
+                    position: relative;
+                    width: 90px;
+                }
+
+                .gnb_webtoon {
+                    overflow: hidden;
+                    font-size: 16px;
+                    line-height: 88px;
+                    text-align: center;
+                }
+                .gnb_webtoon span {
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                .gnb_webtoon_1 {
+                    font-size: 16px;
+                    line-height: 88px;
+                    text-align: center;
+                }
+
+                .ir_wa {
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .recent_view .btn_recent {
+                    right: 43px;
+                    width: 82px;
+                    height: 35px;
+                    padding-left: 25px;
+                    font-weight: 600;
+                    line-height: 36px;
+                }
+
+                .btn_com {
+                    background-color: white;
+                    border: none;
+                    background-image: url("../image/6.png");
+                }
+                .glyphicon{
+                    padding-left: 25px;
                 }
             </style>
 
@@ -81,31 +207,59 @@
                         <div class="row">
                             <div class="col-xs-12" id="daumWrap">
                                 <div id="wrapMinidaum">
-                                    <div id="minidaum">
-                                        <strong class="minidaum_logo">
-                                            <a>
-                                                <i class="glyphicon glyphicon-thumbs-up"></i>
-                                            </a>
+                                    <div class="col-xs-6" id="minidaum">
+                                        <strong class="minidaum_logo float_left">
+                                            <a><img src="../image/1.png"></a>
                                         </strong>
                                         <div class="minidaum_gnb">
-
-                                            <div id="minidaumService">
-                                                <i class="glyphicon glyphicon-thumbs-up"></i>  
-                                            </div>
-                                            <div class="dsvc_util">
-                                                <i class="glyphicon glyphicon-thumbs-up"></i>
-                                            </div>
-
-                                            <div class="dsvc_util">
-                                                <i class="glyphicon glyphicon-thumbs-up"></i>
-                                            </div>
                                             <div id="minidaumUser">
+                                                <a><img src="../image/5.png"></a>
+                                            </div>
+                                            <div class="dsvc_util ">
+                                                <a><img src="../image/3.png"></a>
+                                            </div>
+
+                                            <div class="dsvc_util ">
+                                                <a><img src="../image/4.png"></a>
+                                            </div>
+                                            <div id="minidaumService">
                                                 <a>로그인</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="daumHead">
+                                    <div class="col-xs-6  inner_head">
+                                        <h1 class="webtoon float_left">
+                                            <a>
+                                                <img src="../image/logo.png">
+                                            </a>
+                                        </h1>
+
+                                        <div id="daumGnb">
+                                            <Ul class="gnb_webtoon">
+                                                <li class="gnb_ranking">
+                                                    <a><span class="ir_wa">랭킹</span></a>
+                                                </li>
+                                                <li class="gnb_league">
+                                                    <a><span class="ir_wa">웹툰리그</span></a>
+                                                </li>
+                                                <li class="gnb_my">
+                                                    <a><span class="ir_wa">MY</span></a>
+                                                </li>
+                                            </Ul>
+                                        </div>
+
+                                        <div class="recent_view">
+                                            <div class="gnb_webtoon_1">
+                                                <button type="button" class="btn_com btn_recent">최근본</button>
+                                                <span class="glyphicon glyphicon-zoom-in"></span>
+                                            </div>
+                                            
+                                            
+                                           
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
