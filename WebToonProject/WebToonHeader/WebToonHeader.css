@@ -1,0 +1,157 @@
+                /* ======================= */
+                .float_left {float: left; }
+                .float_right { float: right;}
+                a {text-decoration: none; }
+                a:hover {text-decoration: none; }
+                * {margin: 0;padding: 0;}
+                ul li {list-style: none;}
+                /* ======================= */
+
+                #daumWrap {
+                    min-height: 800px;
+                    text-align: center;
+                }
+
+                #daumWrap #wrapMinidaum {
+                    height: 40px;
+                    background: #262424;
+                }
+
+                #daumWrap #wrapMinidaum #minidaum {
+                    float: none;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+
+                #daumWrap #wrapMinidaum #minidaum .minidaum_logo {
+                    height: 40px;
+                    line-height: 40px;
+                }
+
+                #daumWrap #wrapMinidaum #minidaum .minidaumService {
+                    height: 40px;
+                    line-height: 40px;
+
+                }
+
+                #daumWrap #minidaum .minidaum_gnb #minidaumService a {
+                    border-color: #383a3f;
+                    background-color: #383a3f;
+                    margin: 8px;
+                    width: 50px;
+                    height: 24px;
+                    color: #E4E4E4;
+                    font-size: 12px;
+                    line-height: 24px;
+                    text-align: center;
+                    display: block;
+                    float: right;
+                }
+
+                #daumWrap #minidaum .minidaum_gnb a img {
+                    margin: 8px;
+                    height: 24px;
+                    color: #E4E4E4;
+                    font-size: 12px;
+                    line-height: 24px;
+                    text-align: center;
+                    display: block;
+                    float: right;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+
+                /* ======================= */
+                .daumHead .inner_head {
+                    float: none;
+                    margin: 0 auto
+                }
+
+                .daumHead .inner_head .webtoon a {
+                    overflow: hidden;
+                }
+
+                /* ======================= */
+                .daumHead .webtoon {
+                    padding-right: 150px;
+                }
+
+                .daumHead #daumGnb {
+                    float: left;
+                    width: 311px;
+                    height: 90px;
+                }
+
+                .daumHead #daumGnb .gnb_webtoon {
+                    overflow: hidden;
+                    height: 90px;
+                }
+
+                .daumHead #daumGnb .gnb_webtoon li {
+                    float: left;
+                    height: 90px;
+                }
+
+                .daumHead #daumGnb .gnb_webtoon .gnb_ranking {
+                    width: 90px;
+                }
+
+                .daumHead #daumGnb .gnb_webtoon .gnb_league {
+                    width: 129px;
+                }
+                .daumHead #daumGnb .gnb_webtoon .gnb_my {
+                    position: relative;
+                    width: 90px;
+                }
+
+                .daumHead #daumGnb .gnb_webtoon {
+                    overflow: hidden;
+                    font-size: 16px;
+                    line-height: 88px;
+                    text-align: center;
+                }
+                .daumHead #daumGnb .gnb_webtoon span {
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                .daumHead .gnb_webtoon_1 {
+                    font-size: 16px;
+                    line-height: 88px;
+                    text-align: center;
+                }
+
+                .daumHead .ir_wa {
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .daumHead .recent_view .btn_recent {
+                    right: 43px;
+                    width: 82px;
+                    height: 35px;
+                    padding-left: 25px;
+                    font-weight: 600;
+                    line-height: 36px;
+                }
+
+                .daumHead .btn_com {
+                    background-color: white;
+                    border: none;
+                    background-image: url("../image/6.png");
+                }
+                .daumHead .glyphicon{
+                    padding-left: 25px;
+                }
+
+                @media(max-width: 767px)
+                {
+                    .webtoon {display: none;}
+                    .daumGnb{ text-align: center;}
+                }
