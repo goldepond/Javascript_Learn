@@ -10,105 +10,10 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="WebToonSection.css">
 
+   
 
-    <style>
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        a:hover,
-        a:focus {
-            text-decoration: none;
-        }
-
-        ul li {
-            list-style: none;
-        }
-
-        /* ============================================= */
-        .daumContent .top_banner {
-            background-color: navajowhite;
-            text-align: center;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-
-        .daumContent .row {
-            text-align: center;
-        }
-
-        /* ============================================= */
-        .cMain {
-            display: inline-block;
-            margin: 0 auto;
-            float: none;
-        }
-
-        .cont_schedule {
-            position: relative;
-        }
-
-        .cMain .cont_schedule .tit_week,
-        .cMain .cont_schedule .tit_conclusion,
-        .cMain .cont_schedule .link_sort {
-            float: left;
-            display: block;
-            height: 20px;
-            font-size: 14px;
-            line-height: 20px;
-            color: #666;
-            text-decoration: none;
-        }
-
-        .cont_schedule .ico_bar {
-            color: black;
-            overflow: hidden;
-            float: left;
-            width: 1px;
-            height: 12px;
-            margin: 6px 9px 0 0;
-            background-position: 0 -200px;
-            display: block;
-        }
-
-        /* ========================== */
-        .cont_schedule .list_tab {
-            overflow: hidden;
-            position: absolute;
-            left: 287px;
-        }
-
-        .cont_schedule .list_tab li {
-            float: left;
-            margin-right: 16px;
-            font-weight: 600;
-            font-size: 16px;
-            text-align: center;
-        }
-        /* ================================ */
-
-        .cont_schedule .list_tab li .li_box{
-            position: relative;
-        }
-
-        .cont_schedule .list_tab li .li_box a{
-            color: white;
-            top: 50%;
-            left: 50%; 
-            text-align: center;
-            position: absolute;
-            transform: translate( -50%, -50% );
-
-        }
-        /* ================================ */
-        .cont_schedule .link_tab {
-            /* color: #fff; */
-            color: black;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -123,6 +28,7 @@
                 </div>
                 <div class="col-xs-6 cMain">
                     <div class=" cont_schedule">
+                        
                         <h3 class=" tit_week #home #daily">
                             <a class="link_sort on">요일</a>
                         </h3>
@@ -141,7 +47,7 @@
                             <img src="../image/icon.png"/>
                         </h3>
 
-                        <div class="day">
+                        <div class="day"><!--요일별 웹툰 설정 바-->
                             <ul class="list_tab" id="dayListTab">
                                 <li>
                                     <div class="li_box">
@@ -187,17 +93,84 @@
                                 </li>
                             </ul>
 
-                            <div class="wrap_webtoon col-xs-6">
-                                <div class="box_recommend" id="specialWebtoonArea">
-
+                            <div class="wrap_webtoon">
+                                <div class="box_recommend" id="specialWebtoonArea"> <!--틀별 추천 웹툰-->
+                                    <div id="specialWebtoonArea" class="box_recommend">
+                                    
+                                        <a href="##" class="link_recommend ">
+                                            <em class="emph_recommend">NEW WEBTOON</em>
+                                            <strong class="tit_subject">21’ LCK 서머 : Summer is Coming</strong>
+                                            <span class="txt_summary">2021년 LCK 서머 스플릿 공식 웹툰
+                                                <br>
+                                                매주 핫한 경기와 비하인드 스토리 대방출!
+                                             </span>
+                                            <img src="../image/webtoonimage/4-1.png" class="img_thumb">
+                                        </a>
+                                    </div>
                                 </div>
+
                                 <ul id="dayList1" class="list_wt">
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
 
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
                                 </ul>
-                            </div>
-                            <div id="dayList2" class="list_wt">
+
+
 
                             </div>
+
                         </div>
                     </div>
                 </div>
