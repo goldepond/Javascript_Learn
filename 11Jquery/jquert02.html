@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="jquery-3.6.0.js"></script>
+    </head>
+
+    <body>
+        <h1>엘리먼트 속성변경 attr</h1>
+        <input type="text" id="test1" readonly><br />
+
+        <img src="##" class="test2">
+        <img src="##" class="test3" width="" height="">
+    </body>
+
+
+
+    <script>
+        //===========js=================
+        console.log( document.getElementById("test1").id + "  js");
+        //===========jquery=================
+        console.log( $("#test1").attr("id") + "  jquery");
+        console.log( $("#test1").attr("readonly") + "  jquery readonly");
+
+        //============속성변경====================
+
+        //값의 변경 (속성명,변경명)
+        $(".test2").attr("src","../image/2.jpg");
+
+        //여러 값의 변경 {키:값 , 키:값, 키:값}
+        //키는 ""로 묶여있나 없나 상관없음
+        $(".test3").attr({"src":"../image/3.jpg", width:"1000px","height":"1000px"});
+
+
+
+        
+    </script>
+
+</html>

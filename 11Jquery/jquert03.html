@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="jquery-3.6.0.js"></script>
+        <style>
+        </style>
+    </head>
+
+    <body>
+
+        <ul class="test">
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+    </body>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+
+
+
+    <script>
+        //js로 for문 돌리기
+        document.querySelectorAll("li").forEach(function (value, index, node) {
+            console.log(value);
+            console.log("11111111111111111111111")
+            console.log(index);
+            console.log("222222222222222222222")
+            console.log(node);
+            console.log("333333333333333333333333")
+
+            value.style.backgroundColor = "red";
+        })
+
+
+        //제이쿼리는 다중 단일이건 상관없이 한번에 모든 선택자에 적용
+        $("li").css("backgroundColor", "blue");
+
+        var result = $("li").css("backgroundColor");
+        console.log(result);
+
+
+        $(".box").css({
+            backgroundColor : "green",
+            display : "inline-block",
+            width : "300px",
+            height : "200px",
+            border : "50px solid black",
+            margin : "50px",
+            padding : "50px"
+        })
+    </script>
+
+</html>

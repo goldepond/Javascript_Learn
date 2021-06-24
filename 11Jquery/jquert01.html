@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+    <input type="text" id="apple" value="김이택"><br/>
+    <input type="text" class="melon" value="김삼택"><br/>
+    <input type="hidden" value="김사택"><br/>
+</body>
+
+<script>
+    //제이쿼리 $()를 통해 요소를 얻으면 반환으로 객체를 돌려받는다
+    //$(선택자)[인덱스] 를 이용해서 엘리먼트 형태로 값을 꺼낼 수 있음
+    //결론적으로  $(선택자).제이쿼리함수를 이용해서 js작없을 빠라게 처리할  수있습니다,
+    var a1 = document.getElementById("apple");
+    console.log(a1);
+
+    var a2 = $("#apple");
+    console.log(a2);
+
+    var a3 = $("#apple")[0];
+    console.log(a3);
+
+    
+    var a4 = $("#apple")[1];
+    console.log(a4);
+
+    var a5 = $("#apple")[2];
+    console.log(a5);
+
+    var a6 = $("#apple")[0].id;
+    console.log(a6);
+
+    var a6 = $("#apple")[0].id;
+    console.log(a6);
+
+    var a6 = $("#apple")[0].innerHTML;
+    console.log(a6);
+
+    var b2 = $(".melon").val();
+    console.log(b2);
+
+    //========================================
+    var b3 = $("input[type=hidden]").val();
+    console.log(b3);
+
+        //==========값변경==============================
+        var b3 = $("input[type=hidden]").val("김이택");
+    console.log(b3);
+
+</script>
+</html>

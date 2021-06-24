@@ -104,15 +104,18 @@ ul li {
 }
 
 .cont_schedule .wrap_webtoon .list_wt {
-    background-color: brown;
-display: block;
+    
+    display: block;
     float: left;
-    width: 670px;
+    
     
     padding: 0;
     margin: 0 auto;
 }
-
+.cont_schedule .wrap_webtoon #dayList1{
+    background-color: brown;
+    width: 670px;
+}
 .list_wt li {
 
     margin-bottom: 5px;
@@ -167,4 +170,11 @@ display: block;
 .box_recommend .txt_summary {
     display: block;
     padding: 11px 48px 0 0;
+}
+
+/* =-========================= */
+
+.cont_schedule .wrap_webtoon #dayList2  {
+    background-color:cadetblue;
+    width: 1000px;
 }

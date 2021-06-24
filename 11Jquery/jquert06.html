@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="jquery-3.6.0.js"></script>
+        <style>
+        </style>
+    </head>
+
+    <body>
+
+        <h1>도큐먼트</h1>
+
+        <script>
+            // window.onload = function(){
+            //     //문서가 모두 준비되면 실행 1번만 사용이 가능
+            //     console.log(document.getElementById("btn"));
+            //     document.getElementById("btn").onclick = function(){
+            //         alert("실행");
+            //     }
+            // }
+
+
+            //도큐몬투 ready()는 여러개 사용이 가능합니다
+            $(document).ready(function(){
+                document.getElementById("btn").onclick = function(){
+                    alert("실행");
+                }
+            })
+
+            
+            $(document).ready(function(){
+                console.log(11111111);
+            })
+
+            $(document).ready(function(){
+                console.log(222222222);
+            })
+        </script>
+
+        <!--윈도우 온로드를 사용하는 경우 이벤트보다 스크립트가 위에 선언되어있다.-->
+        <button type="button" id="btn">이벤트버튼</button>
+
+        <script>
+        </script>
+
+</html>
