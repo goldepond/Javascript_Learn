@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script src="jquery-3.6.0.js"></script>
+    </head>
+
+    <body>
+
+        <button type="button" id="ajaxBtn">에이잭스요청</button>
+
+    <script>
+        $("#ajaxBtn").click(function(){
+
+            //제이쿼리 ajax함수
+            $.ajax({
+                //요청방식
+                type:"post" ,
+
+                //보내는 주소
+                url : "http://localhost:8181/myweb/getXML" ,
+
+                //요청데이터 형식 xml로 데이터 줘~
+                dataType :"xml" , 
+
+                //전송 데이터 형식 json형식으로 데이터 줄꺼임
+                contentType :"application/json" ,
+
+                //값
+                data : JSON.stringify({"name" : "홍길동" , "age" : "20"}) ,
+
+
+                //t성공시 실행 함수
+                success :function(data) {
+                    console.log(data);
+                } ,
+
+                //실패시 실행함수
+                error :function(status, error){
+                    console.log(status, error);
+                }
+
+
+            })
+        });
+    </script>
+
+</html>
