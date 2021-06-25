@@ -5,8 +5,385 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="../WebToonHeader/WebToonHeader.css">
+    <link rel="stylesheet" href="../WebToonSection/WebToonSection.css">
+    <link rel="stylesheet" href="../WebToonFooter/WebToonFooter.css">
+
 </head>
 <body>
-    
+
+    <header>
+        <div class=".container-fluid custon_header">
+            <div class="row">
+                <div class="col-xs-12" id="daumWrap">
+                    <div id="wrapMinidaum">
+                        <div class="col-lg-6 col-sm-12" id="minidaum">
+                            <strong class="minidaum_logo float_left">
+                                <a><img src="../image/1.png"></a>
+                            </strong>
+                            <div class="minidaum_gnb">
+                                <div id="minidaumUser">
+                                    <a><img src="../image/5.png"></a>
+                                </div>
+                                <div class="dsvc_util ">
+                                    <a><img src="../image/3.png"></a>
+                                </div>
+
+                                <div class="dsvc_util ">
+                                    <a><img src="../image/4.png"></a>
+                                </div>
+                                <div id="minidaumService">
+                                    <a>로그인</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="daumHead">
+                        <div class="col-lg-6  col-sm-12  inner_head">
+                            <h1 class="webtoon float_left">
+                                <a>
+                                    <img src="../image/logo.png">
+                                </a>
+                            </h1>
+
+                            <div id="daumGnb">
+                                <Ul class="gnb_webtoon">
+                                    <li class="gnb_ranking">
+                                        <a><span class="ir_wa">랭킹</span></a>
+                                    </li>
+                                    <li class="gnb_league">
+                                        <a><span class="ir_wa">웹툰리그</span></a>
+                                    </li>
+                                    <li class="gnb_my">
+                                        <a><span class="ir_wa">MY</span></a>
+                                    </li>
+                                </Ul>
+                            </div>
+
+                            <div class="recent_view">
+                                <div class="gnb_webtoon_1 float_right">
+                                    <button type="button" class="btn_com btn_recent">최근본</button>
+                                    <span class="glyphicon glyphicon-zoom-in"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <body>
+        <div class=".container-fluid daumContent">
+            <div class="row">
+                <div class="col-xs-12 top_banner">
+                    <a class=" link_banner">
+                        <img src="../image/Big1.png">
+                    </a>
+                </div>
+                <div class="col-xs-6 cMain">
+                    <div class=" cont_schedule">
+                        
+                        <h3 class=" tit_week #home #daily">
+                            <a class="link_sort on">요일</a>
+                        </h3>
+
+                        <h3 class="tit_conclusion #home #finished">
+                            <span class="ico_comm ico_bar"></span>
+                            <a class="link_sort">완결</a>
+                        </h3>
+
+                        <h3 class="link_sort link_tab_gidamoo">
+                            <span class="ico_comm ico_bar"></span>
+                            <a class="link_sort">기다리면무료
+                                <span class="ico_gidamoo ico_new"></span>
+                            </a>
+                            <span class="ico_comm ico_bar"></span>
+                            <img src="../image/icon.png"/>
+                        </h3>
+
+                        <div class="day"><!--요일별 웹툰 설정 바-->
+                            <ul class="list_tab" id="dayListTab">
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">월</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">화</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">수</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">목</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">금</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">토</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_box">
+                                        <img src="../image/CIRCLE.png"/>
+                                        <a class="btn_comm link_tab">일</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="wrap_webtoon">
+                                <div class="box_recommend" id="specialWebtoonArea"> <!--틀별 추천 웹툰-->
+                                    <div id="specialWebtoonArea" class="box_recommend">
+                                        <a href="##" class="link_recommend">
+                                            <em class="emph_recommend">NEW WEBTOON</em>
+                                            <strong class="tit_subject">21’ LCK 서머 : Summer is Coming</strong>
+                                            <span class="txt_summary">2021년 LCK 서머 스플릿 공식 웹툰
+                                                <br>
+                                                매주 핫한 경기와 비하인드 스토리 대방출!
+                                             </span>
+                                            <img src="../image/webtoonimage/4-1.png" class="img_thumb">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <ul id="dayList1" class="list_wt">
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul id="dayList2" class="list_wt">
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="##" class="link_wt">
+                                            <img src="../image/webtoonimage/1-15.jpg">
+                                            가나다라
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <div id="midBnr" class="middle_banner #home #mid_bnr">
+                                <a>
+                                    <img src="../image/banner.png">
+                                </a>
+                            </div>
+
+                            <div class="cont_mystyle #home #recommend">
+                                <ul class="list_mystyle">
+                                    <li>
+                                        <a class="link_mystyle">
+                                            <span class="txt_mystyle">
+                                                <em class="emph_recomm"> 추천 웹툰  </em>
+                                                " 다음엔 이거 어때?"
+                                            </span>
+                                            <strong class="web_font tit_recomm">3M</strong>
+                                            <span class="txt_genre">
+                                                <span class="screen_out">장르</span>
+                                                " 드라마, 순정, 사랑"
+                                            </span>
+                                            <span class="txt_story">
+                                                <span class="screen_out">스토리</span>
+                                                연인에게로 가는 길을 잃고 헤매는 사람들의 사랑 이야기
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+    <footer>
+        <div class=".container-fluid custon_footer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="daumFoot">
+                        <div class="service_reference">
+                            <a class="btn_comm link_quest">
+                                <img src="../image/연재및유통문의.png"> 연재 및 유통 문의</a>
+                            <a class="btn_comm link_partner">
+                                <img src="../image/연재및유통문의.png">사업제휴문의</a>
+                            <a class="btn_comm link_partner">
+                                <img src="../image/연재및유통문의.png">앱 다운로드</a>
+                        </div>
+                        <div class="footer_link">
+                            <a class="link_info">서비스 약관/정책 </a>
+                            <span class="ico_comm"></span>
+                            <a class="link_info">권리침해신고</a>
+                            <span class="ico_comm"></span>
+                            <a class="link_info">다음웹툰 고객센터</a>
+                            <span class="ico_comm"></span>
+                            <a class="link_info">유료서비스 약관</a>
+                        </div>
+                        <small class="info_copyright">
+                            <a class="link_daumkakao">Kakao Corp.</a>
+                            All rights reserved.
+                        </small>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
